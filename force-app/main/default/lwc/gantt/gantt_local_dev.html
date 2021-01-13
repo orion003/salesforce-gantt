@@ -1,0 +1,34 @@
+<template>
+    <div style="width:1150px; height:600px;">
+        <div style="width: 30%; padding-bottom: 4px; padding-right: 8px; display: inline-block">
+            <lightning-combobox
+                name="group_filter"
+                label="Project Type"
+                value={groupValue}
+                placeholder="Select Project Type"
+                options={groupOptions}
+                onchange={handleGroupChange}>
+            </lightning-combobox>
+        </div>
+        <div style="width: 30%; padding-bottom: 4px; padding-right: 8px; display: inline-block">
+            <lightning-combobox
+                name="scale_filter"
+                label="Time Scale"
+                value={scaleValue}
+                placeholder="Select Scale"
+                options={scaleOptions}
+                onchange={handleScaleChange}>
+            </lightning-combobox>
+        </div>
+        <div style="width: 10%; padding-bottom: 4px; display: inline-block">
+            <lightning-button-icon
+                name="refresh_chart"
+                icon-name="utility:refresh"
+                alternative-text="Refresh Chart"
+                title="Refresh Chart"
+                onclick={handleRefreshClick}>
+            </lightning-button-icon>
+        </div>
+        <div class="thegantt" lwc:dom="manual" style='width: 1100px; height: 500px;'></div>
+    </div>
+</template>
